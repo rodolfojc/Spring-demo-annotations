@@ -3,4 +3,8 @@ Autowiring Injection: Spring look for matches in property by type, class or inte
 			As of Spring Framework 4.3, an @Autowired annotation on such a constructor is no 
 			longer necessary if the target bean only defines one constructor to begin with. 
 	Setter injection
-			
+	Field injection
+	
+	Which one is better? : Choose a style, stay consistent in your project. All have the same function. 
+	
+	Qualifiers: (@Qualifiers("DEFAULT ID CLASS"))
