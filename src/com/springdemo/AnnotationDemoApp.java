@@ -17,6 +17,9 @@ public class AnnotationDemoApp {
 		//CALL METHOD
 		System.out.println(theCoach.getDailyWorkout());
 		
+		//CALL NEEW METHODS
+		System.out.println(theCoach.getDailyFortune());
+		
 		//CLOSE CONTEXT
 		context.close();
 	}

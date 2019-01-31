@@ -1,5 +1,6 @@
 package com.springdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 //ADD COMPONENT - ANNOTATION
@@ -8,9 +9,21 @@ import org.springframework.stereotype.Component;
 @Component //DEFAULT BEAN ID - FIRST LETTER LOWER CASE
 public class TennisCoach implements Coach {
 
+	private FortuneService fortuneService;
+	
+	@Autowired
+	public TennisCoach(FortuneService FortuneService) {
+		this.fortuneService = FortuneService;
+	}
+	
 	@Override
 	public String getDailyWorkout() {
 		return "Practice your backhand volley";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return this.fortuneService.getFortune();
 	}
 
 }
