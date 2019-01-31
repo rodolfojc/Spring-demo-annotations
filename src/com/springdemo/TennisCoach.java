@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component //DEFAULT BEAN ID - FIRST LETTER LOWER CASE
 public class TennisCoach implements Coach {
 
+	@Autowired
 	private FortuneService fortuneService;
 	
 	/*@Autowired
@@ -20,11 +21,11 @@ public class TennisCoach implements Coach {
 		System.out.println(">>TennisCoach: inside Default Constructor");
 	}
 	
-	@Autowired
+	/*@Autowired
 	public void doSomeCrazyStuff(FortuneService fortuneService) {
 		System.out.println(">>TennisCoach: inside doSomeCrazyStuff() Setter");
 		this.fortuneService = fortuneService;
-	}
+	}*/
 	
 	@Override
 	public String getDailyWorkout() {
