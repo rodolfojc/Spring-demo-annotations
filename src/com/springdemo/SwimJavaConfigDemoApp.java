@@ -9,16 +9,20 @@ public class SwimJavaConfigDemoApp {
 		
 		//READ SPRING CONFIG FILE
 		AnnotationConfigApplicationContext context =
-				new AnnotationConfigApplicationContext(SportConfig.class);
+				new AnnotationConfigApplicationContext(MyLoggerConfigTwo.class, SportConfig.class);
 		
 		//GET THE BEAN FROM THE SPRING CONTATINER
-		Coach theCoach = context.getBean("swimCoach", Coach.class);	
+		SwimCoach theCoach = context.getBean("swimCoach", SwimCoach.class);	
 		
 		//CALL METHOD
 		System.out.println(theCoach.getDailyWorkout());
 		
 		//CALL NEEW METHODS
 		System.out.println(theCoach.getDailyFortune());
+		
+		//NEW METHODS
+		System.out.println("email: "+theCoach.getEmail());
+		System.out.println("team: "+theCoach.getTeam());	
 		
 		//CLOSE CONTEXT
 		context.close();
