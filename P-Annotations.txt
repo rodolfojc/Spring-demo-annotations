@@ -17,3 +17,8 @@ Ways of configuring Spring Containers
 - Full XML Config
 - XML Component Scan
 - Java Configuration Class
+
+Defining Beans in Spring
+ 
+-Full XML
+-Java Configuration Class
