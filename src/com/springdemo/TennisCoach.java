@@ -1,5 +1,8 @@
 package com.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -9,12 +12,25 @@ import org.springframework.stereotype.Component;
 //@Component("thatSillyCoach")
 
 @Component //DEFAULT BEAN ID - FIRST LETTER LOWER CASE
-@Scope("prototype") // ADD SCOPE 
+//@Scope("prototype") // ADD SCOPE 
 public class TennisCoach implements Coach {
 
 	@Autowired
 	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
+	
+	//INIT METHOD
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println(">>TennisCoach: inside the Init Method");
+	}
+	
+	//DESTROY
+	@PreDestroy
+	public void doMyCleanupStuff() {
+		System.out.println(">>TennisCoach: inside the Destroy Method");
+	}
+	
 	
 	/*@Autowired
 	public TennisCoach(FortuneService FortuneService) {
