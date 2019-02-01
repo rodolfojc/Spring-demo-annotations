@@ -7,4 +7,8 @@ Autowiring Injection: Spring look for matches in property by type, class or inte
 	
 	Which one is better? : Choose a style, stay consistent in your project. All have the same function. 
 	
-	Qualifiers: (@Qualifiers("DEFAULT ID CLASS"))
+	Qualifiers: (@Qualifiers("DEFAULT ID CLASS")) - Field injection
+	With constructor: @Autowired
+    				  public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
+    				  fortuneService = theFortuneService;
+    				  }
