@@ -12,3 +12,8 @@ Autowiring Injection: Spring look for matches in property by type, class or inte
     				  public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
     				  fortuneService = theFortuneService;
     				  }
+    				  
+Ways of configuring Spring Containers
+- Full XML Config
+- XML Component Scan
+- Java Configuration Class
